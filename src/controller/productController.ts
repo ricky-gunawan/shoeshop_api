@@ -42,16 +42,29 @@ export const getProduct = asyncHandler(async (req: Request, res: Response) => {
 
 export const createProduct = asyncHandler(async (req: Request, res: Response) => {
   const { img, name, price, brand, color, description } = req.body;
-  await Product.create({ img, name, price, brand, color, description });
-  res.status(201).send(`Product created`);
+  if (
+    (brand === "adidas" || brand === "converse" || brand === "new balance" || brand === "nike" || brand === "puma" || brand === "reebok" || brand === "vans") &&
+    (color === "black" || color === "white" || color === "red" || color === "blue" || color === "green")
+  ) {
+    await Product.create({ img, name, price, brand, color, description });
+    res.status(201).send(`Product created`);
+  } else {
+    throw new CustomError(`brand or color invalid`, 400);
+  }
 });
 
 export const updateProduct = asyncHandler(async (req: Request, res: Response) => {
   const _id = req.params.id;
   const { img, name, price, brand, color, description } = req.body;
-  console.log({ _id, img, name, price, brand, color, description });
-  await Product.findOneAndUpdate({ _id }, { $set: { img, name, price, brand, color, description } }, { runValidators: true });
-  res.status(200).send(`Product updated`);
+  if (
+    (brand === "adidas" || brand === "converse" || brand === "new balance" || brand === "nike" || brand === "puma" || brand === "reebok" || brand === "vans" || brand === undefined) &&
+    (color === "black" || color === "white" || color === "red" || color === "blue" || color === "green" || color === undefined)
+  ) {
+    await Product.findOneAndUpdate({ _id }, { $set: { img, name, price, brand, color, description } }, { runValidators: true });
+    res.status(200).send(`Product updated`);
+  } else {
+    throw new CustomError(`brand or color invalid`, 400);
+  }
 });
 
 export const deleteProduct = asyncHandler(async (req: Request, res: Response) => {

@@ -1,15 +1,19 @@
 import { connectDB } from "../config/db";
 import Product from "./productModel";
+import User from "./userModel";
 import { productsList } from "./productsList";
+import { userList } from "./userList";
 
 connectDB();
 
 const importData = async () => {
   try {
     await Product.deleteMany();
+    await User.deleteMany();
 
     await Product.insertMany(productsList);
-    console.log("Data imported");
+    await User.insertMany(userList);
+    console.log("data imported");
     process.exit(0);
   } catch (error) {
     console.error(`Error: ${error}`);
@@ -20,6 +24,7 @@ const importData = async () => {
 const destroyData = async () => {
   try {
     await Product.deleteMany();
+    await User.insertMany(userList);
     console.log("data destroyed");
     process.exit(0);
   } catch (error) {
