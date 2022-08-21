@@ -5,6 +5,7 @@ import { errorHandler, notFoundHandler } from "./middleware/errorMiddleware";
 import uploadMiddleware from "./middleware/uploadMiddleware";
 import productRoutes from "./routes/productRoutes";
 import uploadRoute from "./routes/uploadRoute";
+import userRoutes from "./routes/userRoutes";
 
 const app = express();
 
@@ -14,6 +15,9 @@ app.use(express.json());
 
 // Product Routes
 app.use("/api/products", productRoutes);
+
+// User Routes
+app.use("/api/users", userRoutes);
 
 // Upload Route
 app.post("/api/upload", uploadMiddleware, uploadRoute);

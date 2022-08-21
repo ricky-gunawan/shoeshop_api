@@ -61,7 +61,7 @@ export const updateProduct = asyncHandler(async (req: Request, res: Response) =>
     (color === "black" || color === "white" || color === "red" || color === "blue" || color === "green" || color === undefined)
   ) {
     await Product.findOneAndUpdate({ _id }, { $set: { img, name, price, brand, color, description } }, { runValidators: true });
-    res.status(200).send(`Product updated`);
+    res.send(`Product updated`);
   } else {
     throw new CustomError(`brand or color invalid`, 400);
   }
@@ -70,5 +70,5 @@ export const updateProduct = asyncHandler(async (req: Request, res: Response) =>
 export const deleteProduct = asyncHandler(async (req: Request, res: Response) => {
   const _id = req.params.id;
   await Product.deleteOne({ _id });
-  res.status(200).send(`Product deleted`);
+  res.send(`Product deleted`);
 });
