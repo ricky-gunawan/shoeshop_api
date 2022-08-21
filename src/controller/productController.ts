@@ -24,17 +24,17 @@ export const getProducts = asyncHandler(async (req: Request, res: Response) => {
 });
 
 export const getProduct = asyncHandler(async (req: Request, res: Response) => {
-  const params = req.params.id;
-  if (!isValidObjectId(params)) {
+  const _id = req.params.id;
+  if (!isValidObjectId(_id)) {
     throw new CustomError(`Invalid ID`, 400);
   }
 
   let product: {};
-  const searchProduct = await Product.findById(params);
+  const searchProduct = await Product.findById(_id);
   if (searchProduct) {
     product = searchProduct;
   } else {
-    throw new CustomError(`Couldn't find the product with ID: ${params}`, 404);
+    throw new CustomError(`Couldn't find the product with ID: ${_id}`, 404);
   }
 
   res.json(product);

@@ -11,17 +11,17 @@ export const getUsers = asyncHandler(async (req: Request, res: Response) => {
 });
 
 export const getUser = asyncHandler(async (req: Request, res: Response) => {
-  const params = req.params.id;
-  if (!isValidObjectId(params)) {
+  const _id = req.params.id;
+  if (!isValidObjectId(_id)) {
     throw new CustomError(`Invalid ID`, 400);
   }
 
   let user: {};
-  const searchUser = await User.findById(params);
+  const searchUser = await User.findById(_id);
   if (searchUser) {
     user = searchUser;
   } else {
-    throw new CustomError(`Couldn't find the user with ID: ${params}`, 404);
+    throw new CustomError(`Couldn't find the user with ID: ${_id}`, 404);
   }
 
   res.json(user);
