@@ -2,7 +2,9 @@ import "dotenv/config";
 import express from "express";
 import { connectDB } from "./config/db";
 import { errorHandler, notFoundHandler } from "./middleware/errorMiddleware";
-import productRouter from "./routes/productRoutes";
+import uploadMiddleware from "./middleware/uploadMiddleware";
+import productRoutes from "./routes/productRoutes";
+import uploadRoute from "./routes/uploadRoute";
 
 const app = express();
 
@@ -11,7 +13,10 @@ connectDB();
 app.use(express.json());
 
 // Product Routes
-app.use("/api/products", productRouter);
+app.use("/api/products", productRoutes);
+
+// Upload Route
+app.post("/api/upload", uploadMiddleware, uploadRoute);
 
 // NotFound Handler
 app.use(notFoundHandler);

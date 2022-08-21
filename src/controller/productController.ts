@@ -26,7 +26,7 @@ export const getProducts = asyncHandler(async (req: Request, res: Response) => {
 export const getProduct = asyncHandler(async (req: Request, res: Response) => {
   const params = req.params.id;
   if (!isValidObjectId(params)) {
-    throw new CustomError(`Invalid id`, 400);
+    throw new CustomError(`Invalid ID`, 400);
   }
 
   let product: {};
@@ -38,4 +38,24 @@ export const getProduct = asyncHandler(async (req: Request, res: Response) => {
   }
 
   res.json(product);
+});
+
+export const createProduct = asyncHandler(async (req: Request, res: Response) => {
+  const { img, name, price, brand, color, description } = req.body;
+  await Product.create({ img, name, price, brand, color, description });
+  res.status(201).send(`Product created`);
+});
+
+export const updateProduct = asyncHandler(async (req: Request, res: Response) => {
+  const _id = req.params.id;
+  const { img, name, price, brand, color, description } = req.body;
+  console.log({ _id, img, name, price, brand, color, description });
+  await Product.findOneAndUpdate({ _id }, { $set: { img, name, price, brand, color, description } }, { runValidators: true });
+  res.status(200).send(`Product updated`);
+});
+
+export const deleteProduct = asyncHandler(async (req: Request, res: Response) => {
+  const _id = req.params.id;
+  await Product.deleteOne({ _id });
+  res.status(200).send(`Product deleted`);
 });
