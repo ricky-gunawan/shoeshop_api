@@ -10,7 +10,7 @@ export const getCarts = asyncHandler(async (req: Request, res: Response) => {
 });
 
 export const getCart = asyncHandler(async (req: Request, res: Response) => {
-  const _id = req.params.id;
+  const _id = req.params.userId;
   if (!isValidObjectId(_id)) {
     throw new CustomError(`Invalid ID`, 400);
   }
@@ -28,7 +28,7 @@ export const getCart = asyncHandler(async (req: Request, res: Response) => {
 });
 
 export const updateCart = asyncHandler(async (req: Request, res: Response) => {
-  const _id = req.params.id;
+  const _id = req.params.userId;
   const { items } = req.body;
 
   await Cart.findOneAndUpdate({ user: _id }, { $set: { items } }, { runValidators: true, new: true });
@@ -36,7 +36,7 @@ export const updateCart = asyncHandler(async (req: Request, res: Response) => {
 });
 
 export const deleteCart = asyncHandler(async (req: Request, res: Response) => {
-  const _id = req.params.id;
+  const _id = req.params.userId;
   await Cart.deleteOne({ user: _id });
   res.send("Cart deleted");
 });

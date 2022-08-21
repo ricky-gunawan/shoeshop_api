@@ -11,7 +11,7 @@ export const getUsers = asyncHandler(async (req: Request, res: Response) => {
 });
 
 export const getUser = asyncHandler(async (req: Request, res: Response) => {
-  const _id = req.params.id;
+  const _id = req.params.userId;
   if (!isValidObjectId(_id)) {
     throw new CustomError(`Invalid ID`, 400);
   }
@@ -42,7 +42,7 @@ export const createUser = asyncHandler(async (req: Request, res: Response) => {
 });
 
 export const updateUser = asyncHandler(async (req: Request, res: Response) => {
-  const _id = req.params.id;
+  const _id = req.params.userId;
   const { name, email, password, address } = req.body;
 
   const user = await User.findOne({ email, _id: { $ne: _id } });
@@ -52,16 +52,16 @@ export const updateUser = asyncHandler(async (req: Request, res: Response) => {
   } else {
     if (password) {
       const hashPassword = await bcrypt.hashSync(password, 10);
-      await User.findOneAndUpdate({ _id }, { $set: { name, email, password: hashPassword, address } }, { runValidators: true, new: true });
+      await User.findByIdAndUpdate(_id, { $set: { name, email, password: hashPassword, address } }, { runValidators: true, new: true });
     } else {
-      await User.findOneAndUpdate({ _id }, { $set: { name, email, password, address } }, { runValidators: true, new: true });
+      await User.findByIdAndUpdate(_id, { $set: { name, email, password, address } }, { runValidators: true, new: true });
     }
     res.send("user updated");
   }
 });
 
 export const deleteUser = asyncHandler(async (req: Request, res: Response) => {
-  const _id = req.params.id;
+  const _id = req.params.userId;
   await User.deleteOne({ _id });
   res.send(`User deleted`);
 });

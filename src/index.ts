@@ -7,6 +7,7 @@ import productRoutes from "./routes/productRoutes";
 import uploadRoute from "./routes/uploadRoute";
 import userRoutes from "./routes/userRoutes";
 import cartRoutes from "./routes/cartRoutes";
+import orderRoutes from "./routes/orderRoutes";
 
 const app = express();
 
@@ -22,6 +23,9 @@ app.use("/api/users", userRoutes);
 
 // Cart Routes
 app.use("/api/carts", cartRoutes);
+
+// Order Routes
+app.use("/api/orders", orderRoutes);
 
 // Upload Route
 app.post("/api/upload", uploadMiddleware, uploadRoute);

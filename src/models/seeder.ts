@@ -4,6 +4,7 @@ import User from "./userModel";
 import { productsList } from "./productsList";
 import { userList } from "./userList";
 import Cart from "./cartModel";
+import Order from "./orderModel";
 
 connectDB();
 
@@ -12,6 +13,7 @@ const importData = async () => {
     await Product.deleteMany();
     await User.deleteMany();
     await Cart.deleteMany();
+    await Order.deleteMany();
 
     await Product.insertMany(productsList);
     await User.insertMany(userList);
@@ -28,6 +30,8 @@ const destroyData = async () => {
     await Product.deleteMany();
     await User.deleteMany();
     await Cart.deleteMany();
+    await Order.deleteMany();
+
     console.log("data destroyed");
     process.exit(0);
   } catch (error) {

@@ -7,6 +7,6 @@ router.route("/search").get(getProducts);
 
 router.route("/").post(createProduct);
 
-router.route("/:id").get(getProduct).put(updateProduct).delete(deleteProduct);
+router.route("/:productId").get(getProduct).put(updateProduct).delete(deleteProduct);
 
 export default router;
