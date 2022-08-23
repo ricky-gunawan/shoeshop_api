@@ -2,15 +2,15 @@ import { Request, Response } from "express";
 import asyncHandler from "express-async-handler";
 import Order from "../models/orderModel";
 
-export const getUserOrders = asyncHandler(async (req: Request, res: Response) => {
-  const userId = req.params.userId;
+export const getUserOrders = asyncHandler(async (req: any, res: Response) => {
+  const userId = req.user._id;
   let orders: {};
   orders = await Order.find({ user: userId });
   res.json(orders);
 });
 
-export const createOrder = asyncHandler(async (req: Request, res: Response) => {
-  const userId = req.params.userId;
+export const createOrder = asyncHandler(async (req: any, res: Response) => {
+  const userId = req.user._id;
   const { date, items, totalItems, totalPrice, address, payment } = req.body;
   await Order.create({ user: userId, date, items, totalItems, totalPrice, address, payment });
   res.status(201).send("Order created");

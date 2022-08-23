@@ -2,7 +2,6 @@ import "dotenv/config";
 import express from "express";
 import { connectDB } from "./config/db";
 import { errorHandler, notFoundHandler } from "./middleware/errorMiddleware";
-import uploadMiddleware from "./middleware/uploadMiddleware";
 import productRoutes from "./routes/productRoutes";
 import uploadRoute from "./routes/uploadRoute";
 import userRoutes from "./routes/userRoutes";
@@ -28,7 +27,7 @@ app.use("/api/carts", cartRoutes);
 app.use("/api/orders", orderRoutes);
 
 // Upload Route
-app.post("/api/upload", uploadMiddleware, uploadRoute);
+app.use("/api/upload", uploadRoute);
 
 // NotFound Handler
 app.use(notFoundHandler);

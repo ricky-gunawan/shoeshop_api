@@ -1,9 +1,10 @@
-import { Request, Response } from "express";
-import asyncHandler from "express-async-handler";
+import express from "express";
+import { uploadImage } from "../controller/uploadController";
+import { admin } from "../middleware/authMiddleware";
+import uploadMiddleware from "../middleware/uploadMiddleware";
 
-const uploadRoute = asyncHandler(async (req: Request, res: Response) => {
-  const file = req.file?.filename;
-  res.send(file);
-});
+const router = express.Router();
 
-export default uploadRoute;
+router.route("/").post(admin, uploadMiddleware, uploadImage);
+
+export default router;

@@ -1,9 +1,11 @@
 import { Request, Response } from "express";
 import asyncHandler from "express-async-handler";
-import { isValidObjectId } from "mongoose";
+import { isValidObjectId, Document } from "mongoose";
 import { CustomError } from "../models/customError";
 import User from "../models/userModel";
 import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
+import "dotenv/config";
 
 export const getUsers = asyncHandler(async (req: Request, res: Response) => {
   const users = await User.find({});
@@ -41,9 +43,14 @@ export const createUser = asyncHandler(async (req: Request, res: Response) => {
   }
 });
 
-export const updateUser = asyncHandler(async (req: Request, res: Response) => {
+export const updateUser = asyncHandler(async (req: any, res: Response) => {
   const _id = req.params.userId;
   const { name, email, password, address } = req.body;
+  const id = req.user._id;
+  const isAdmin: boolean = req.user.isAdmin;
+  if (!isAdmin && _id != id) {
+    throw new CustomError("Not Authorized", 400);
+  }
 
   const user = await User.findOne({ email, _id: { $ne: _id } });
 
@@ -73,7 +80,9 @@ export const userLogin = asyncHandler(async (req: Request, res: Response) => {
   const pass = await bcrypt.compare(password, userPassword);
 
   if (user && pass) {
-    res.json(user);
+    const JWT_SECRET = process.env.JWT_SECRET || "";
+    const userCred = { id: user._id, name: user.name, email: user.email, address: user.address, isAdmin: user.isAdmin, token: jwt.sign({ data: user._id }, JWT_SECRET, { expiresIn: "1d" }) };
+    res.json(userCred);
   } else {
     throw new CustomError("email or password doesn't match", 400);
   }

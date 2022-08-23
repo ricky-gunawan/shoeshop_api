@@ -1,11 +1,12 @@
 import express from "express";
 import { createUser, deleteUser, getUser, getUsers, updateUser, userLogin } from "../controller/userController";
+import { admin, protect } from "../middleware/authMiddleware";
 
 const router = express.Router();
 
-router.route("/").get(getUsers).post(createUser);
+router.route("/").get(admin, getUsers).post(createUser);
 
-router.route("/:userId").get(getUser).put(updateUser).delete(deleteUser);
+router.route("/:userId").get(admin, getUser).put(protect, updateUser).delete(admin, deleteUser);
 
 router.route("/login").post(userLogin);
 

@@ -1,5 +1,4 @@
 import { Request, Response, NextFunction } from "express";
-import "dotenv/config";
 import { CustomError } from "../models/customError";
 
 export const notFoundHandler = (req: Request, res: Response, next: NextFunction) => {

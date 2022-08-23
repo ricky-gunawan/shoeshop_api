@@ -9,8 +9,14 @@ export const getCarts = asyncHandler(async (req: Request, res: Response) => {
   res.json(carts);
 });
 
-export const getCart = asyncHandler(async (req: Request, res: Response) => {
+export const getCart = asyncHandler(async (req: any, res: Response) => {
   const _id = req.params.userId;
+  const id = req.user._id;
+  const isAdmin: boolean = req.user.isAdmin;
+  if (!isAdmin && _id != id) {
+    throw new CustomError("Not Authorized", 400);
+  }
+
   if (!isValidObjectId(_id)) {
     throw new CustomError(`Invalid ID`, 400);
   }
@@ -27,8 +33,8 @@ export const getCart = asyncHandler(async (req: Request, res: Response) => {
   res.json(cart);
 });
 
-export const updateCart = asyncHandler(async (req: Request, res: Response) => {
-  const _id = req.params.userId;
+export const updateCart = asyncHandler(async (req: any, res: Response) => {
+  const _id = req.user._id;
   const { items } = req.body;
 
   await Cart.findOneAndUpdate({ user: _id }, { $set: { items } }, { runValidators: true, new: true });
