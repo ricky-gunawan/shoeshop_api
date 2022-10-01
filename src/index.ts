@@ -7,6 +7,7 @@ import uploadRoute from "./routes/uploadRoute";
 import userRoutes from "./routes/userRoutes";
 import cartRoutes from "./routes/cartRoutes";
 import orderRoutes from "./routes/orderRoutes";
+import path from "path";
 
 const app = express();
 
@@ -28,6 +29,9 @@ app.use("/api/orders", orderRoutes);
 
 // Upload Route
 app.use("/api/upload", uploadRoute);
+
+// Static Routes
+app.use("/api/static", express.static(path.join(__dirname, "assets")));
 
 // NotFound Handler
 app.use(notFoundHandler);
