@@ -2,13 +2,13 @@ import bcrypt from "bcryptjs";
 
 export const userList = [
   {
-    name: "User 1",
+    name: "User1",
     email: "user1@user.com",
     password: bcrypt.hashSync("user123xyz", 10),
     address: "jalan lurus tanpa belokan, Bandung",
   },
   {
-    name: "User 2",
+    name: "User2",
     email: "user2@user.com",
     password: bcrypt.hashSync("user123xyz", 10),
     address: "jalan terus pantang mundur, Bandung",

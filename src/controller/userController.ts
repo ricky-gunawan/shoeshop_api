@@ -34,7 +34,7 @@ export const createUser = asyncHandler(async (req: Request, res: Response) => {
   const user = await User.findOne({ email });
 
   if (user) {
-    throw new CustomError("Email has been used", 400);
+    throw new CustomError("Email has been used", 401);
   } else {
     const hashPassword = await bcrypt.hashSync(password, 10);
     await User.create({ name, email, password: hashPassword, address });
@@ -81,9 +81,9 @@ export const userLogin = asyncHandler(async (req: Request, res: Response) => {
 
   if (user && pass) {
     const JWT_SECRET = process.env.JWT_SECRET || "";
-    const userCred = { id: user._id, name: user.name, email: user.email, address: user.address, isAdmin: user.isAdmin, token: jwt.sign({ data: user._id }, JWT_SECRET, { expiresIn: "1d" }) };
+    const userCred = { _id: user._id, name: user.name, email: user.email, address: user.address, isAdmin: user.isAdmin, token: jwt.sign({ data: user._id }, JWT_SECRET, { expiresIn: "1d" }) };
     res.json(userCred);
   } else {
-    throw new CustomError("email or password doesn't match", 400);
+    throw new CustomError("email or password doesn't match", 401);
   }
 });

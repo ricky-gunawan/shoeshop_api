@@ -13,12 +13,11 @@ export const getCart = asyncHandler(async (req: any, res: Response) => {
   const _id = req.params.userId;
   const id = req.user._id;
   const isAdmin: boolean = req.user.isAdmin;
-  if (!isAdmin && _id != id) {
-    throw new CustomError("Not Authorized", 400);
-  }
 
   if (!isValidObjectId(_id)) {
     throw new CustomError(`Invalid ID`, 400);
+  } else if (!isAdmin && _id != id) {
+    throw new CustomError("Not Authorized", 401);
   }
 
   let cart: {};
