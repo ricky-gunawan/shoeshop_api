@@ -47,7 +47,7 @@ export const createProduct = asyncHandler(async (req: Request, res: Response) =>
     (color === "black" || color === "white" || color === "red" || color === "blue" || color === "green")
   ) {
     await Product.create({ img, name, price, brand, color, description });
-    res.status(201).send(`Product created`);
+    res.status(201).send({ message: "Product created" });
   } else {
     throw new CustomError(`brand or color invalid`, 400);
   }
@@ -61,7 +61,7 @@ export const updateProduct = asyncHandler(async (req: Request, res: Response) =>
     (color === "black" || color === "white" || color === "red" || color === "blue" || color === "green" || color === undefined)
   ) {
     await Product.findByIdAndUpdate(_id, { $set: { img, name, price, brand, color, description } }, { runValidators: true });
-    res.send(`Product updated`);
+    res.send({ message: "Product created" });
   } else {
     throw new CustomError(`brand or color invalid`, 400);
   }
@@ -70,5 +70,5 @@ export const updateProduct = asyncHandler(async (req: Request, res: Response) =>
 export const deleteProduct = asyncHandler(async (req: Request, res: Response) => {
   const _id = req.params.productId;
   await Product.deleteOne({ _id });
-  res.send(`Product deleted`);
+  res.send({ message: "Product deleted" });
 });

@@ -34,12 +34,12 @@ export const createUser = asyncHandler(async (req: Request, res: Response) => {
   const user = await User.findOne({ email });
 
   if (user) {
-    throw new CustomError("Email has been used", 401);
+    throw new CustomError("Email has been used", 409);
   } else {
     const hashPassword = await bcrypt.hashSync(password, 10);
     await User.create({ name, email, password: hashPassword, address });
 
-    res.status(201).send("user created");
+    res.status(201).send({ message: "user created" });
   }
 });
 
@@ -63,14 +63,14 @@ export const updateUser = asyncHandler(async (req: any, res: Response) => {
     } else {
       await User.findByIdAndUpdate(_id, { $set: { name, email, password, address } }, { runValidators: true, new: true });
     }
-    res.send("user updated");
+    res.send({ message: "user updated" });
   }
 });
 
 export const deleteUser = asyncHandler(async (req: Request, res: Response) => {
   const _id = req.params.userId;
   await User.deleteOne({ _id });
-  res.send(`User deleted`);
+  res.send({ message: "User deleted" });
 });
 
 export const userLogin = asyncHandler(async (req: Request, res: Response) => {
@@ -84,6 +84,6 @@ export const userLogin = asyncHandler(async (req: Request, res: Response) => {
     const userCred = { _id: user._id, name: user.name, email: user.email, address: user.address, isAdmin: user.isAdmin, token: jwt.sign({ data: user._id }, JWT_SECRET, { expiresIn: "1d" }) };
     res.json(userCred);
   } else {
-    throw new CustomError("email or password doesn't match", 401);
+    throw new CustomError("email or password doesn't wrong", 401);
   }
 });

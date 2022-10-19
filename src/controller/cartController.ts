@@ -37,11 +37,11 @@ export const updateCart = asyncHandler(async (req: any, res: Response) => {
   const { items } = req.body;
 
   await Cart.findOneAndUpdate({ user: _id }, { $set: { items } }, { runValidators: true, new: true });
-  res.send("Cart updated");
+  res.send({ message: "Cart updated" });
 });
 
 export const deleteCart = asyncHandler(async (req: Request, res: Response) => {
   const _id = req.params.userId;
   await Cart.deleteOne({ user: _id });
-  res.send("Cart deleted");
+  res.send({ message: "Cart deleted" });
 });

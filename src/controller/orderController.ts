@@ -13,7 +13,7 @@ export const createOrder = asyncHandler(async (req: any, res: Response) => {
   const userId = req.user._id;
   const { date, items, totalItems, totalPrice, address, payment } = req.body;
   await Order.create({ user: userId, date, items, totalItems, totalPrice, address, payment });
-  res.status(201).send("Order created");
+  res.status(201).send({ message: "Order created" });
 });
 
 export const getAllOrders = asyncHandler(async (req: Request, res: Response) => {
@@ -33,11 +33,11 @@ export const updateOrder = asyncHandler(async (req: Request, res: Response) => {
   const orderId = req.params.orderId;
   const { date, items, totalItems, totalPrice, address, payment, isPaid } = req.body;
   await Order.findByIdAndUpdate(orderId, { $set: { date, items, totalItems, totalPrice, address, payment, isPaid } });
-  res.send("Order updated");
+  res.send({ message: "Order updated" });
 });
 
 export const deleteOrder = asyncHandler(async (req: Request, res: Response) => {
   const orderId = req.params.orderId;
   await Order.deleteOne({ _id: orderId });
-  res.send("Order deleted");
+  res.send({ message: "Order deleted" });
 });
