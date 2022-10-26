@@ -1,15 +1,8 @@
 import express from "express";
-import roleList from "../config/roleList";
-import { deleteCart, getCart, getCarts, updateCart } from "../controller/cartController";
-import verifyRoles from "../middleware/verifyRoles";
+import { getCart, updateCart } from "../controller/customer/cart";
 
-const router = express.Router();
+const cartRoutes = express.Router();
 
-router.route("/").put(verifyRoles(roleList.customer), updateCart).get(verifyRoles(roleList.customer, roleList.admin), getCarts);
+cartRoutes.route("/").get(getCart).put(updateCart);
 
-router.route("/:userId").get(verifyRoles(roleList.customer), getCart).delete(verifyRoles(roleList.customer, roleList.admin), deleteCart);
-
-// router.route("/").put(protect, updateCart).get(admin, getCarts);
-
-// router.route("/:userId").get(protect, getCart).delete(admin, deleteCart);
-export default router;
+export default cartRoutes;

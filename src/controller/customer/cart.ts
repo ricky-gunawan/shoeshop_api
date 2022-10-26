@@ -1,11 +1,6 @@
 import { Request, Response } from "express";
 import asyncHandler from "express-async-handler";
-import Cart from "../models/cartModel";
-
-export const getCarts = asyncHandler(async (_, res: Response) => {
-  const carts = await Cart.find({});
-  res.json(carts);
-});
+import Cart from "../../models/cartModel";
 
 export const getCart = asyncHandler(async (req: Request, res: Response) => {
   const userId = req.userId;
@@ -23,15 +18,9 @@ export const getCart = asyncHandler(async (req: Request, res: Response) => {
 });
 
 export const updateCart = asyncHandler(async (req: any, res: Response) => {
-  const _id = req.user._id;
+  const userId = req.userId;
   const { items } = req.body;
 
-  await Cart.findOneAndUpdate({ user: _id }, { $set: { items } }, { runValidators: true, new: true });
+  await Cart.findOneAndUpdate({ user: userId }, { $set: { items } }, { runValidators: true, new: true });
   res.send({ message: "Cart updated" });
-});
-
-export const deleteCart = asyncHandler(async (req: Request, res: Response) => {
-  const _id = req.params.userId;
-  await Cart.deleteOne({ user: _id });
-  res.send({ message: "Cart deleted" });
 });

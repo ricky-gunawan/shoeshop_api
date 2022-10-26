@@ -17,9 +17,6 @@ const verifyJWT = asyncHandler(async (req: Request, _, next: NextFunction) => {
     const decode: any = jwt.verify(token, access_token_secret);
     req.userId = decode.userInfo._id;
     req.userRoles = decode.userInfo.roles;
-    // const user = await User.findById(decode._id);
-    // if (!user) throw new CustomError("Not Authorized", 401);
-    // req.user = user
   } catch (error) {
     throw new CustomError("Not Authorized", 401);
   }

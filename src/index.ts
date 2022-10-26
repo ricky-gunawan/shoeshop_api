@@ -5,15 +5,22 @@ import cors from "cors";
 import corsOptions from "./config/corsOptions";
 import cookieParser from "cookie-parser";
 import { connectDB } from "./config/db";
+import credentials from "./middleware/credentials";
+import verifyJWT from "./middleware/verifyJWT";
+import verifyRoles from "./middleware/verifyRoles";
+import roleList from "./config/roleList";
 import { errorHandler, notFoundHandler } from "./middleware/errorMiddleware";
+import { getProducts } from "./controller/getProducts";
+import { getProduct } from "./controller/getProduct";
 import authRoutes from "./routes/authRoutes";
-import productRoutes from "./routes/productRoutes";
-import uploadRoute from "./routes/uploadRoute";
 import userRoutes from "./routes/userRoutes";
 import cartRoutes from "./routes/cartRoutes";
 import orderRoutes from "./routes/orderRoutes";
-import credentials from "./middleware/credentials";
-import verifyJWT from "./middleware/verifyJWT";
+import adminProductRoutes from "./routes/adminProductRoutes";
+import adminUserRoutes from "./routes/adminUserRoutes";
+import adminCartRoutes from "./routes/adminCartRoutes";
+import adminOrderRoutes from "./routes/adminOrderRoutes";
+import adminUploadRoutes from "./routes/adminUploadRoutes";
 
 const app = express();
 
@@ -34,22 +41,31 @@ app.use("/api/static", express.static(path.join(__dirname, "assets")));
 // User Auth Routes
 app.use("/api/auth", authRoutes);
 
-// Product Routes
-app.use("/api/products", productRoutes);
+// Public
+app.get("/api/products/search", getProducts);
+app.get("/api/products/:productId", getProduct);
 
 app.use(verifyJWT);
 
+app.use("/cust-api", verifyRoles(roleList.customer));
 // User Routes
-app.use("/api/users", userRoutes);
-
+app.use("/cust-api/users", userRoutes);
 // Cart Routes
-app.use("/api/carts", cartRoutes);
-
+app.use("/cust-api/carts", cartRoutes);
 // Order Routes
-app.use("/api/orders", orderRoutes);
+app.use("/cust-api/orders", orderRoutes);
 
-// Upload Route
-app.use("/api/upload", uploadRoute);
+app.use("/adm-api", verifyRoles(roleList.admin));
+// Admin Product Routes
+app.use("/adm-api/products", adminProductRoutes);
+// Admin User Routes
+app.use("/adm-api/users", adminUserRoutes);
+// Admin Cart Routes
+app.use("/adm-api/carts", adminCartRoutes);
+// Admin Order Routes
+app.use("/adm-api/orders", adminOrderRoutes);
+// Admin Upload Route
+app.use("/adm-api/upload", adminUploadRoutes);
 
 // NotFound Handler
 app.use(notFoundHandler);

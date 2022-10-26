@@ -1,10 +1,10 @@
 import { Request, Response } from "express";
 import asyncHandler from "express-async-handler";
 import { isValidObjectId } from "mongoose";
-import { CustomError } from "../models/customError";
-import User from "../models/userModel";
 import bcrypt from "bcryptjs";
 import "dotenv/config";
+import User from "../../models/userModel";
+import { CustomError } from "../../models/customError";
 
 export const getUsers = asyncHandler(async (req: Request, res: Response) => {
   const users = await User.find({});
