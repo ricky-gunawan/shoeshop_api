@@ -1,32 +1,22 @@
 import { Request, Response } from "express";
 import asyncHandler from "express-async-handler";
-import { isValidObjectId } from "mongoose";
 import Cart from "../models/cartModel";
-import { CustomError } from "../models/customError";
 
-export const getCarts = asyncHandler(async (req: Request, res: Response) => {
+export const getCarts = asyncHandler(async (_, res: Response) => {
   const carts = await Cart.find({});
   res.json(carts);
 });
 
-export const getCart = asyncHandler(async (req: any, res: Response) => {
-  const _id = req.params.userId;
-  const id = req.user._id;
-  const isAdmin: boolean = req.user.isAdmin;
-
-  if (!isValidObjectId(_id)) {
-    throw new CustomError(`Invalid ID`, 400);
-  } else if (!isAdmin && _id != id) {
-    throw new CustomError("Not Authorized", 401);
-  }
+export const getCart = asyncHandler(async (req: Request, res: Response) => {
+  const userId = req.userId;
 
   let cart: {};
-  const searchCart = await Cart.findOne({ user: _id });
+  const searchCart = await Cart.findOne({ user: userId });
   if (searchCart) {
     cart = searchCart;
   } else {
-    await Cart.create({ user: _id, items: [] });
-    cart = (await Cart.findOne({ user: _id })) || {};
+    await Cart.create({ user: userId, items: [] });
+    cart = (await Cart.findOne({ user: userId })) || {};
   }
 
   res.json(cart);

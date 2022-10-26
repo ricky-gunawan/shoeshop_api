@@ -1,10 +1,9 @@
 import { Request, Response } from "express";
 import asyncHandler from "express-async-handler";
-import { isValidObjectId, Document } from "mongoose";
+import { isValidObjectId } from "mongoose";
 import { CustomError } from "../models/customError";
 import User from "../models/userModel";
 import bcrypt from "bcryptjs";
-import jwt from "jsonwebtoken";
 import "dotenv/config";
 
 export const getUsers = asyncHandler(async (req: Request, res: Response) => {
@@ -27,20 +26,6 @@ export const getUser = asyncHandler(async (req: Request, res: Response) => {
   }
 
   res.json(user);
-});
-
-export const createUser = asyncHandler(async (req: Request, res: Response) => {
-  const { name, email, password, address } = req.body;
-  const user = await User.findOne({ email });
-
-  if (user) {
-    throw new CustomError("Email has been used", 409);
-  } else {
-    const hashPassword = await bcrypt.hashSync(password, 10);
-    await User.create({ name, email, password: hashPassword, address });
-
-    res.status(201).send({ message: "user created" });
-  }
 });
 
 export const updateUser = asyncHandler(async (req: any, res: Response) => {
@@ -71,19 +56,4 @@ export const deleteUser = asyncHandler(async (req: Request, res: Response) => {
   const _id = req.params.userId;
   await User.deleteOne({ _id });
   res.send({ message: "User deleted" });
-});
-
-export const userLogin = asyncHandler(async (req: Request, res: Response) => {
-  const { email, password } = req.body;
-  const user = await User.findOne({ email });
-  const userPassword: string = user?.password || "";
-  const pass = await bcrypt.compare(password, userPassword);
-
-  if (user && pass) {
-    const JWT_SECRET = process.env.JWT_SECRET || "";
-    const userCred = { _id: user._id, name: user.name, email: user.email, address: user.address, isAdmin: user.isAdmin, token: jwt.sign({ data: user._id }, JWT_SECRET, { expiresIn: "1d" }) };
-    res.json(userCred);
-  } else {
-    throw new CustomError("email or password doesn't wrong", 401);
-  }
 });

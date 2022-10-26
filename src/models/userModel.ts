@@ -5,9 +5,10 @@ const userSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   address: { type: String, required: true },
-  isAdmin: { type: Boolean, required: true, default: false },
+  roles: [Number],
+  refreshToken: { type: String, required: false },
 });
 
-const userModel = mongoose.model("User", userSchema);
+const User = mongoose.model("User", userSchema);
 
-export default userModel;
+export default User;

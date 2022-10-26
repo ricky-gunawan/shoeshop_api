@@ -1,10 +1,10 @@
 import { connectDB } from "../config/db";
-import Product from "./productModel";
-import User from "./userModel";
+import Cart from "../models/cartModel";
+import Order from "../models/orderModel";
+import Product from "../models/productModel";
+import User from "../models/userModel";
 import { productsList } from "./productsList";
 import { userList } from "./userList";
-import Cart from "./cartModel";
-import Order from "./orderModel";
 
 connectDB();
 
