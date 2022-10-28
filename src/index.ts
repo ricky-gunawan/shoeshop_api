@@ -42,7 +42,7 @@ app.use("/api/static", express.static(path.join(__dirname, "assets")));
 app.use("/api/auth", authRoutes);
 
 // Public
-app.get("/api/products/search", getProducts);
+app.get("/api/products", getProducts);
 app.get("/api/products/:productId", getProduct);
 
 app.use(verifyJWT);

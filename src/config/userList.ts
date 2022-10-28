@@ -20,6 +20,6 @@ export const userList = [
     email: "admin@admin.com",
     password: bcrypt.hashSync("admin123xyz", 10),
     address: "jalan kaki di tempat grakk, Bandung",
-    roles: [11, 21],
+    roles: [21],
   },
 ];
