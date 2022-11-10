@@ -10,9 +10,8 @@ import verifyJWT from "./middleware/verifyJWT";
 import verifyRoles from "./middleware/verifyRoles";
 import roleList from "./config/roleList";
 import { errorHandler, notFoundHandler } from "./middleware/errorMiddleware";
-import { getProducts } from "./controller/getProducts";
-import { getProduct } from "./controller/getProduct";
 import authRoutes from "./routes/authRoutes";
+import productRoutes from "./routes/productRoutes";
 import userRoutes from "./routes/userRoutes";
 import cartRoutes from "./routes/cartRoutes";
 import orderRoutes from "./routes/orderRoutes";
@@ -21,6 +20,7 @@ import adminUserRoutes from "./routes/adminUserRoutes";
 import adminCartRoutes from "./routes/adminCartRoutes";
 import adminOrderRoutes from "./routes/adminOrderRoutes";
 import adminUploadRoutes from "./routes/adminUploadRoutes";
+import getRandomProducts from "./controller/getRandomProducts";
 
 const app = express();
 
@@ -42,12 +42,13 @@ app.use("/api/static", express.static(path.join(__dirname, "assets")));
 app.use("/api/auth", authRoutes);
 
 // Public
-app.get("/api/products", getProducts);
-app.get("/api/products/:productId", getProduct);
+app.get("/api/product-display", getRandomProducts);
 
 app.use(verifyJWT);
 
 app.use("/cust-api", verifyRoles(roleList.customer));
+// Product Routes
+app.use("/cust-api/products", productRoutes);
 // User Routes
 app.use("/cust-api/users", userRoutes);
 // Cart Routes

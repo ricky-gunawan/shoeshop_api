@@ -1,8 +1,13 @@
 import { Request, Response } from "express";
 import asyncHandler from "express-async-handler";
 import { isValidObjectId } from "mongoose";
-import { CustomError } from "../models/customError";
-import Product from "../models/productModel";
+import { CustomError } from "../../models/customError";
+import Product from "../../models/productModel";
+
+export const getProducts = asyncHandler(async (req: Request, res: Response) => {
+  const products = await Product.find({});
+  res.json(products);
+});
 
 export const getProduct = asyncHandler(async (req: Request, res: Response) => {
   const _id = req.params.productId;
