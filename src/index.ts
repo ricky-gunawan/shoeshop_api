@@ -20,7 +20,7 @@ import adminUserRoutes from "./routes/adminUserRoutes";
 import adminCartRoutes from "./routes/adminCartRoutes";
 import adminOrderRoutes from "./routes/adminOrderRoutes";
 import adminUploadRoutes from "./routes/adminUploadRoutes";
-import getRandomProducts from "./controller/getRandomProducts";
+import getProductsDisplay from "./controller/getProductsDisplay";
 
 const app = express();
 
@@ -42,7 +42,7 @@ app.use("/api/static", express.static(path.join(__dirname, "assets")));
 app.use("/api/auth", authRoutes);
 
 // Public
-app.get("/api/product-display", getRandomProducts);
+app.get("/api/product-display", getProductsDisplay);
 
 app.use(verifyJWT);
 
