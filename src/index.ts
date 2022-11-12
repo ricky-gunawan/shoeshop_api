@@ -21,6 +21,7 @@ import adminCartRoutes from "./routes/adminCartRoutes";
 import adminOrderRoutes from "./routes/adminOrderRoutes";
 import adminUploadRoutes from "./routes/adminUploadRoutes";
 import getProductsDisplay from "./controller/getProductsDisplay";
+import getSingleProductDisplay from "./controller/getSingleProductDisplay";
 
 const app = express();
 
@@ -43,6 +44,7 @@ app.use("/api/auth", authRoutes);
 
 // Public
 app.get("/api/products-display", getProductsDisplay);
+app.get("/api/products-display/:productId", getSingleProductDisplay);
 
 app.use(verifyJWT);
 

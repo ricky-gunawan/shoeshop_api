@@ -18,7 +18,7 @@ const verifyJWT = asyncHandler(async (req: Request, _, next: NextFunction) => {
     req.userId = decode.userInfo._id;
     req.userRoles = decode.userInfo.roles;
   } catch (error) {
-    throw new CustomError("Not Authorized", 401);
+    throw new CustomError("Invalid Token", 403);
   }
 
   next();
