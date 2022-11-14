@@ -83,7 +83,17 @@ export const handleRefreshToken = asyncHandler(async (req: Request, res: Respons
       access_token_secret,
       { expiresIn: "30s" }
     );
-    res.json({ accessToken });
+
+    const userCred = {
+      _id: foundUser._id,
+      name: foundUser.name,
+      email: foundUser.email,
+      address: foundUser.address,
+      roles: foundUser.roles,
+      accessToken,
+    };
+
+    res.json(userCred);
   } catch (error) {
     throw new CustomError("Forbidden", 403);
   }
