@@ -37,12 +37,16 @@ export const login = asyncHandler(async (req: Request, res: Response) => {
         },
       },
       access_token_secret,
-      { expiresIn: "30s" }
+      { expiresIn: "10s" }
     );
 
-    const refreshToken = jwt.sign({ _id: user._id }, refresh_token_secret, { expiresIn: "1d" });
+    const refreshTokenCookies = req.cookies?.jwt;
+    const savedRefreshTokens = user.refreshToken.filter((token) => token !== refreshTokenCookies);
 
-    await User.findOneAndUpdate({ email }, { $set: { refreshToken } });
+    const newRefreshToken = jwt.sign({ _id: user._id }, refresh_token_secret, { expiresIn: "1d" });
+    savedRefreshTokens.push(newRefreshToken);
+
+    await User.findOneAndUpdate({ email }, { $set: { refreshToken: savedRefreshTokens } });
 
     const userCred = {
       _id: user._id,
@@ -53,7 +57,7 @@ export const login = asyncHandler(async (req: Request, res: Response) => {
       accessToken,
     };
 
-    res.cookie("jwt", refreshToken, { httpOnly: true, sameSite: "none", maxAge: 1 * 24 * 60 * 60 * 1000 });
+    res.cookie("jwt", newRefreshToken, { httpOnly: true, secure: true, sameSite: "none", maxAge: 1 * 24 * 60 * 60 * 1000 });
     res.json(userCred);
   } else {
     throw new CustomError("email or password wrong.", 401);
@@ -81,7 +85,7 @@ export const handleRefreshToken = asyncHandler(async (req: Request, res: Respons
         },
       },
       access_token_secret,
-      { expiresIn: "30s" }
+      { expiresIn: "10s" }
     );
 
     const userCred = {
@@ -109,12 +113,12 @@ export const logout = asyncHandler(async (req: Request, res: Response) => {
   const foundUser = await User.findOne({ refreshToken });
 
   if (!foundUser) {
-    res.clearCookie("jwt", { httpOnly: true, sameSite: "none" });
+    res.clearCookie("jwt", { httpOnly: true, secure: true, sameSite: "none" });
     res.sendStatus(204);
   }
 
-  await User.findOneAndUpdate({ refreshToken }, { $set: { refreshToken: "" } });
+  await User.findOneAndUpdate({ refreshToken }, { $set: { refreshToken: [] } });
 
-  res.clearCookie("jwt", { httpOnly: true, sameSite: "none" });
+  res.clearCookie("jwt", { httpOnly: true, secure: true, sameSite: "none" });
   res.sendStatus(204);
 });
