@@ -8,7 +8,16 @@ import { CustomError } from "../../models/customError";
 
 export const getUsers = asyncHandler(async (req: Request, res: Response) => {
   const users = await User.find({});
-  res.json(users);
+  const usersData = users.map((user) => {
+    return {
+      _id: user._id,
+      name: user.name,
+      email: user.email,
+      address: user.address,
+      roles: user.roles,
+    };
+  });
+  res.json(usersData);
 });
 
 export const getUser = asyncHandler(async (req: Request, res: Response) => {
@@ -17,25 +26,23 @@ export const getUser = asyncHandler(async (req: Request, res: Response) => {
     throw new CustomError(`Invalid ID`, 400);
   }
 
-  let user: {};
-  const searchUser = await User.findById(_id);
-  if (searchUser) {
-    user = searchUser;
+  const user = await User.findById(_id);
+  if (user) {
+    res.json({
+      _id: user._id,
+      name: user.name,
+      email: user.email,
+      address: user.address,
+      roles: user.roles,
+    });
   } else {
     throw new CustomError(`Couldn't find the user with ID: ${_id}`, 404);
   }
-
-  res.json(user);
 });
 
 export const updateUser = asyncHandler(async (req: any, res: Response) => {
   const _id = req.params.userId;
-  const { name, email, password, address } = req.body;
-  const id = req.user._id;
-  const isAdmin: boolean = req.user.isAdmin;
-  if (!isAdmin && _id != id) {
-    throw new CustomError("Not Authorized", 400);
-  }
+  const { name, email, password, address, roles } = req.body;
 
   const user = await User.findOne({ email, _id: { $ne: _id } });
 
@@ -44,9 +51,9 @@ export const updateUser = asyncHandler(async (req: any, res: Response) => {
   } else {
     if (password) {
       const hashPassword = await bcrypt.hashSync(password, 10);
-      await User.findByIdAndUpdate(_id, { $set: { name, email, password: hashPassword, address } }, { runValidators: true, new: true });
+      await User.findByIdAndUpdate(_id, { $set: { name, email, password: hashPassword, address, roles } }, { runValidators: true, new: true });
     } else {
-      await User.findByIdAndUpdate(_id, { $set: { name, email, password, address } }, { runValidators: true, new: true });
+      await User.findByIdAndUpdate(_id, { $set: { name, email, password, address, roles } }, { runValidators: true, new: true });
     }
     res.send({ message: "user updated" });
   }

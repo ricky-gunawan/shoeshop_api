@@ -17,7 +17,7 @@ const fileStorage = multer.diskStorage({
 });
 
 const fileFilter = (request: Request, file: Express.Multer.File, callback: any): void => {
-  if (file.mimetype === "image/png" || file.mimetype === "image/jpg" || file.mimetype === "image/jpeg") {
+  if (file.mimetype === "image/webp" || file.mimetype === "image/png" || file.mimetype === "image/jpg" || file.mimetype === "image/jpeg") {
     callback(null, true);
   } else {
     callback(new Error(), false);

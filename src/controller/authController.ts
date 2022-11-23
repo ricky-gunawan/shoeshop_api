@@ -49,10 +49,6 @@ export const login = asyncHandler(async (req: Request, res: Response) => {
     await User.findOneAndUpdate({ email }, { $set: { refreshToken: savedRefreshTokens } });
 
     const userCred = {
-      _id: user._id,
-      name: user.name,
-      email: user.email,
-      address: user.address,
       roles: user.roles,
       accessToken,
     };
@@ -89,10 +85,6 @@ export const handleRefreshToken = asyncHandler(async (req: Request, res: Respons
     );
 
     const userCred = {
-      _id: foundUser._id,
-      name: foundUser.name,
-      email: foundUser.email,
-      address: foundUser.address,
       roles: foundUser.roles,
       accessToken,
     };

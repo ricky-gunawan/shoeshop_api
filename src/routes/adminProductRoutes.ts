@@ -1,10 +1,10 @@
 import express from "express";
-import { createProduct, deleteProduct, updateProduct } from "../controller/admin/product";
+import { createProduct, deleteProduct, getProduct, getProducts, updateProduct } from "../controller/admin/product";
 
 const adminProductRoutes = express.Router();
 
-adminProductRoutes.route("/").post(createProduct);
+adminProductRoutes.route("/").get(getProducts).post(createProduct);
 
-adminProductRoutes.route("/:productId").put(updateProduct).delete(deleteProduct);
+adminProductRoutes.route("/:productId").get(getProduct).put(updateProduct).delete(deleteProduct);
 
 export default adminProductRoutes;

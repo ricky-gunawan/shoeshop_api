@@ -2,10 +2,10 @@ import { Request, Response } from "express";
 import asyncHandler from "express-async-handler";
 import bcrypt from "bcryptjs";
 import "dotenv/config";
-import { CustomError } from "../../models/customError";
-import User from "../../models/userModel";
+import User from "../models/userModel";
+import { CustomError } from "../models/customError";
 
-export const updateUser = asyncHandler(async (req: Request, res: Response) => {
+const updateProfile = asyncHandler(async (req: Request, res: Response) => {
   const userId = req.userId;
   const { name, email, password, address } = req.body;
 
@@ -23,3 +23,5 @@ export const updateUser = asyncHandler(async (req: Request, res: Response) => {
     res.send({ message: "user updated" });
   }
 });
+
+export default updateProfile;

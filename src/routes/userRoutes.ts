@@ -1,8 +1,8 @@
 import express from "express";
-import { updateUser } from "../controller/customer/user";
+import updateProfile from "../controller/updateProfile";
 
 const userRoutes = express.Router();
 
-userRoutes.route("/").put(updateUser);
+userRoutes.route("/").put(updateProfile);
 
 export default userRoutes;
