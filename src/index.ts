@@ -1,6 +1,5 @@
 import "dotenv/config";
 import express from "express";
-import path from "path";
 import cors from "cors";
 import corsOptions from "./config/corsOptions";
 import cookieParser from "cookie-parser";
@@ -19,7 +18,6 @@ import adminProductRoutes from "./routes/adminProductRoutes";
 import adminUserRoutes from "./routes/adminUserRoutes";
 import adminCartRoutes from "./routes/adminCartRoutes";
 import adminOrderRoutes from "./routes/adminOrderRoutes";
-import adminUploadRoutes from "./routes/adminUploadRoutes";
 import getProductsDisplay from "./controller/getProductsDisplay";
 import getSingleProductDisplay from "./controller/getSingleProductDisplay";
 import getMe from "./controller/getMe";
@@ -37,8 +35,8 @@ app.use(express.json());
 
 app.use(cookieParser());
 
-// Static Routes
-app.use("/api/static", express.static(path.join(__dirname, "assets")));
+// Static Routes { changing image hoting to cloudinary }
+// app.use("/api/static", express.static(path.join(__dirname, "assets")));
 
 // User Auth Routes
 app.use("/api/auth", authRoutes);
@@ -70,8 +68,9 @@ app.use("/adm-api/users", adminUserRoutes);
 app.use("/adm-api/carts", adminCartRoutes);
 // Admin Order Routes
 app.use("/adm-api/orders", adminOrderRoutes);
-// Admin Upload Route
-app.use("/adm-api/upload", adminUploadRoutes);
+
+// Admin Upload Route { changing image hoting to cloudinary }
+// app.use("/adm-api/upload", adminUploadRoutes);
 
 // NotFound Handler
 app.use(notFoundHandler);

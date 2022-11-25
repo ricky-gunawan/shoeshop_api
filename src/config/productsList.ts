@@ -1,7 +1,7 @@
 export const productsList = [
   {
     name: "nike air max pre-day",
-    img: "58903c0b-0afe-400e-8ac6-9bf3ccf940ba.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/58903c0b-0afe-400e-8ac6-9bf3ccf940ba.webp",
     price: "1.979.000",
     brand: "nike",
     color: "black",
@@ -9,7 +9,7 @@ export const productsList = [
   },
   {
     name: "nike sb force 58",
-    img: "3ca0e8ff-9564-46b0-a808-072cc0e8053a.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/3ca0e8ff-9564-46b0-a808-072cc0e8053a.webp",
     price: "1.099.000",
     brand: "nike",
     color: "black",
@@ -17,7 +17,7 @@ export const productsList = [
   },
   {
     name: "nike metcon 7",
-    img: "63a18e86-4df9-4615-b5f2-73c041358cd2.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/63a18e86-4df9-4615-b5f2-73c041358cd2.webp",
     price: "1.979.000",
     brand: "nike",
     color: "black",
@@ -25,7 +25,7 @@ export const productsList = [
   },
   {
     name: "puma suede classic xxi",
-    img: "suede_classic_xxi_red.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/suede_classic_xxi_red.webp",
     price: "980.000",
     brand: "puma",
     color: "red",
@@ -33,7 +33,7 @@ export const productsList = [
   },
   {
     name: "puma speedcat sparco",
-    img: "speedcat_sparco_red.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/speedcat_sparco_red.webp",
     price: "1.400.000",
     brand: "puma",
     color: "red",
@@ -41,7 +41,7 @@ export const productsList = [
   },
   {
     name: "puma suede classic xxi",
-    img: "suede_classic_xxi_white.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/suede_classic_xxi_white.webp",
     price: "980.000",
     brand: "puma",
     color: "white",
@@ -49,7 +49,7 @@ export const productsList = [
   },
   {
     name: "puma super liga og retro",
-    img: "super_liga_og_retro.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/super_liga_og_retro.webp",
     price: "980.000",
     brand: "puma",
     color: "white",
@@ -57,7 +57,7 @@ export const productsList = [
   },
   {
     name: "nike jordan air 200e",
-    img: "d25948fc-4f2b-4791-90b1-25c5e51eaa4b.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/d25948fc-4f2b-4791-90b1-25c5e51eaa4b.webp",
     price: "2.079.000",
     brand: "nike",
     color: "black",
@@ -65,7 +65,7 @@ export const productsList = [
   },
   {
     name: "nike air presto mid utility",
-    img: "646b995d-23a1-420f-9096-de99bd7e26bd.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/646b995d-23a1-420f-9096-de99bd7e26bd.webp",
     price: "2.279.000",
     brand: "nike",
     color: "black",
@@ -73,7 +73,7 @@ export const productsList = [
   },
   {
     name: "nike air force 1 '07 lx",
-    img: "a3a96008-d81a-41c2-860c-f56709af8d4f.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/a3a96008-d81a-41c2-860c-f56709af8d4f.webp",
     price: "1.899.000",
     brand: "nike",
     color: "green",
@@ -81,7 +81,7 @@ export const productsList = [
   },
   {
     name: "nike air force 1 high '07 lv8",
-    img: "7a623120-f120-4346-8024-b7e9f62aab4c.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/7a623120-f120-4346-8024-b7e9f62aab4c.webp",
     price: "1.919.000",
     brand: "nike",
     color: "green",
@@ -89,7 +89,7 @@ export const productsList = [
   },
   {
     name: "nike air jordan 1 retro high og",
-    img: "3249465b-a198-4399-8373-741d17da9935.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/3249465b-a198-4399-8373-741d17da9935.webp",
     price: "2.569.000",
     brand: "nike",
     color: "blue",
@@ -97,7 +97,7 @@ export const productsList = [
   },
   {
     name: "nike waffle trainer 2",
-    img: "59830ecf-e7f0-459d-bb4a-c8278cb5f751.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/59830ecf-e7f0-459d-bb4a-c8278cb5f751.webp",
     price: "1.279.000",
     brand: "nike",
     color: "blue",
@@ -105,7 +105,7 @@ export const productsList = [
   },
   {
     name: "nike renew run 3",
-    img: "c4f90b49-4874-4404-b008-ed0992c18d62.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/c4f90b49-4874-4404-b008-ed0992c18d62.webp",
     price: "1.299.000",
     brand: "nike",
     color: "red",
@@ -113,7 +113,7 @@ export const productsList = [
   },
   {
     name: "puma ca pro classic",
-    img: "ca_pro_classic.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/ca_pro_classic.webp",
     price: "1.120.000",
     brand: "puma",
     color: "black",
@@ -121,7 +121,7 @@ export const productsList = [
   },
   {
     name: "puma suede classic xxi",
-    img: "suede_classic_xxi.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/suede_classic_xxi.webp",
     price: "980.000",
     brand: "puma",
     color: "black",
@@ -129,7 +129,7 @@ export const productsList = [
   },
   {
     name: "puma magnify nitro",
-    img: "magnify_nitro_blue.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/magnify_nitro_blue.webp",
     price: "1.960.000",
     brand: "puma",
     color: "blue",
@@ -137,7 +137,7 @@ export const productsList = [
   },
   {
     name: "nike sb shane premium",
-    img: "13afd4b8-79bf-41e9-a429-9b11087cd5ab.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/13afd4b8-79bf-41e9-a429-9b11087cd5ab.webp",
     price: "1.299.000",
     brand: "nike",
     color: "red",
@@ -145,7 +145,7 @@ export const productsList = [
   },
   {
     name: "nike air force 1 '07 craft",
-    img: "3e689630-e1ca-4e35-b08c-6f32e9afb14d.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/3e689630-e1ca-4e35-b08c-6f32e9afb14d.webp",
     price: "1.799.000",
     brand: "nike",
     color: "white",
@@ -153,7 +153,7 @@ export const productsList = [
   },
   {
     name: "nike sb ishod wair",
-    img: "e7111522-da86-4b40-888f-3d0df1be82b5.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/e7111522-da86-4b40-888f-3d0df1be82b5.webp",
     price: "1.429.000",
     brand: "nike",
     color: "white",
@@ -162,7 +162,7 @@ export const productsList = [
 
   {
     name: "puma suede classic xxi",
-    img: "suede_classic_xxi_blue.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/suede_classic_xxi_blue.webp",
     price: "980.000",
     brand: "puma",
     color: "blue",
@@ -170,7 +170,7 @@ export const productsList = [
   },
   {
     name: "puma electrify nitro green",
-    img: "electrify_nitro_green.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/electrify_nitro_green.webp",
     price: "1.400.000",
     brand: "puma",
     color: "green",
@@ -178,7 +178,7 @@ export const productsList = [
   },
   {
     name: "puma voyage nitro",
-    img: "voyage_nitro_green.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/voyage_nitro_green.webp",
     price: "1.820.000",
     brand: "puma",
     color: "green",
@@ -186,7 +186,7 @@ export const productsList = [
   },
   {
     name: "vans pride sentry",
-    img: "vans_pride_sentry_black.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/vans_pride_sentry_black.webp",
     price: "1.330.000",
     brand: "vans",
     color: "black",
@@ -194,7 +194,7 @@ export const productsList = [
   },
   {
     name: "vans 136 decon",
-    img: "vans_136_decon_blue.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/vans_136_decon_blue.webp",
     price: "1.260.000",
     brand: "vans",
     color: "blue",
@@ -202,7 +202,7 @@ export const productsList = [
   },
   {
     name: "vans color theory classic",
-    img: "vans_color_theory_classic.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/vans_color_theory_classic.webp",
     price: "910.000",
     brand: "vans",
     color: "green",
@@ -210,7 +210,7 @@ export const productsList = [
   },
   {
     name: "adidas nmd v3",
-    img: "nmd_v3_white.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/nmd_v3_white.webp",
     price: "2.240.000",
     brand: "adidas",
     color: "white",
@@ -218,7 +218,7 @@ export const productsList = [
   },
   {
     name: "adidas daily 3.0 eco",
-    img: "daily_3.0_eco_white.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/daily_3.0_eco_white.webp",
     price: "910.000",
     brand: "adidas",
     color: "white",
@@ -226,7 +226,7 @@ export const productsList = [
   },
   {
     name: "adidas galaxy 5",
-    img: "fy6736_sl_ecom.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/fy6736_sl_ecom.webp",
     price: "750.000",
     brand: "adidas",
     color: "blue",
@@ -234,7 +234,7 @@ export const productsList = [
   },
   {
     name: "adidas vl court 2.0",
-    img: "da9854_sl_ecom.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/da9854_sl_ecom.webp",
     price: "900.000",
     brand: "adidas",
     color: "blue",
@@ -242,7 +242,7 @@ export const productsList = [
   },
   {
     name: "adidas harden vol 5",
-    img: "harden_vol_5_red.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/harden_vol_5_red.webp",
     price: "1.600.000",
     brand: "adidas",
     color: "red",
@@ -250,7 +250,7 @@ export const productsList = [
   },
   {
     name: "adidas 4d fusio shoes",
-    img: "h04509_sl_ecom.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/h04509_sl_ecom.webp",
     price: "3.500.000",
     brand: "adidas",
     color: "blue",
@@ -258,7 +258,7 @@ export const productsList = [
   },
   {
     name: "adidas donovan mtchell",
-    img: "donovan_mitchell_red.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/donovan_mitchell_red.webp",
     price: "1.540.000",
     brand: "adidas",
     color: "red",
@@ -266,7 +266,7 @@ export const productsList = [
   },
   {
     name: "adidas lite racer adapt 4.0",
-    img: "lite_racer_adapt_4.0_green.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/lite_racer_adapt_4.0_green.webp",
     price: "1.200.000",
     brand: "adidas",
     color: "green",
@@ -274,7 +274,7 @@ export const productsList = [
   },
   {
     name: "adidas freak spark",
-    img: "freak_spark_red.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/freak_spark_red.webp",
     price: "1.050.000",
     brand: "adidas",
     color: "red",
@@ -282,7 +282,7 @@ export const productsList = [
   },
   {
     name: "adidas supernova",
-    img: "supernova_green.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/supernova_green.webp",
     price: "1.160.000",
     brand: "adidas",
     color: "green",
@@ -290,7 +290,7 @@ export const productsList = [
   },
   {
     name: "adidas icon 7 tpu",
-    img: "icon_7_tpu_red.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/icon_7_tpu_red.webp",
     price: "952.000",
     brand: "adidas",
     color: "red",
@@ -298,7 +298,7 @@ export const productsList = [
   },
   {
     name: "adidas barricade",
-    img: "gz8482_sl_ecom.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/gz8482_sl_ecom.webp",
     price: "2.200.000",
     brand: "adidas",
     color: "blue",
@@ -306,7 +306,7 @@ export const productsList = [
   },
   {
     name: "adidas supernova",
-    img: "supernova_red.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/supernova_red.webp",
     price: "1.160.000",
     brand: "adidas",
     color: "red",
@@ -314,7 +314,7 @@ export const productsList = [
   },
   {
     name: "adidas 4dfwd x parley",
-    img: "fw3012_sl_ecom.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/fw3012_sl_ecom.webp",
     price: "1.900.000",
     brand: "adidas",
     color: "blue",
@@ -322,7 +322,7 @@ export const productsList = [
   },
   {
     name: "adidas 4dfwd x parley",
-    img: "gx6313_sl_ecom.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/gx6313_sl_ecom.webp",
     price: "4.000.000",
     brand: "adidas",
     color: "black",
@@ -330,7 +330,7 @@ export const productsList = [
   },
   {
     name: "adidas t-mac 2.0 restomod svsm",
-    img: "t-mac_2.0_restomod_svsm_green.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/t-mac_2.0_restomod_svsm_green.webp",
     price: "1.820.000",
     brand: "adidas",
     color: "green",
@@ -338,7 +338,7 @@ export const productsList = [
   },
   {
     name: "adidas ultraboost 5.0 dna",
-    img: "ultraboost_5.0_dna_green.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/ultraboost_5.0_dna_green.webp",
     price: "3.300.000",
     brand: "adidas",
     color: "green",
@@ -346,7 +346,7 @@ export const productsList = [
   },
   {
     name: "converse unt1tl3d translucent barcode",
-    img: "A02599C_A_08X1.jpg",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/A02599C_A_08X1.jpg",
     price: "1.050.000",
     brand: "converse",
     color: "black",
@@ -354,7 +354,7 @@ export const productsList = [
   },
   {
     name: "converse chuck 70 archive paint splatter",
-    img: "A01171C_A_08X1.jpg",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/A01171C_A_08X1.jpg",
     price: "1.190.000",
     brand: "converse",
     color: "black",
@@ -362,7 +362,7 @@ export const productsList = [
   },
   {
     name: "converse x peanuts chuck taylor all star",
-    img: "A02573C_A_08X1.jpg",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/A02573C_A_08X1.jpg",
     price: "980.000",
     brand: "converse",
     color: "red",
@@ -370,7 +370,7 @@ export const productsList = [
   },
   {
     name: "converse chuck taylor all star cx pull tab",
-    img: "A02037C_E_08X1.jpg",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/A02037C_E_08X1.jpg",
     price: "1.050.000",
     brand: "converse",
     color: "red",
@@ -378,7 +378,7 @@ export const productsList = [
   },
   {
     name: "converse chuck taylor all star translucent barcode",
-    img: "A02583C_A_08X1.jpg",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/A02583C_A_08X1.jpg",
     price: "910.000",
     brand: "converse",
     color: "black",
@@ -386,7 +386,7 @@ export const productsList = [
   },
   {
     name: "converse chuck taylor all star leather",
-    img: "135251C_A_08X1.jpg",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/135251C_A_08X1.jpg",
     price: "980.000",
     brand: "converse",
     color: "black",
@@ -394,7 +394,7 @@ export const productsList = [
   },
   {
     name: "converse chuck 70 crafted stripe",
-    img: "A00472C_D_08X1.jpg",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/A00472C_D_08X1.jpg",
     price: "1.190.000",
     brand: "converse",
     color: "blue",
@@ -402,7 +402,7 @@ export const productsList = [
   },
   {
     name: "converse chuck taylor all star cx seasonal color",
-    img: "A03295C_A_08X1.jpg",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/A03295C_A_08X1.jpg",
     price: "1.050.000",
     brand: "converse",
     color: "blue",
@@ -410,7 +410,7 @@ export const productsList = [
   },
   {
     name: "converse chuck 70 it's possible",
-    img: "A01736C_A_08X1.jpg",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/A01736C_A_08X1.jpg",
     price: "1.330.000",
     brand: "converse",
     color: "black",
@@ -418,7 +418,7 @@ export const productsList = [
   },
   {
     name: "vans era 59",
-    img: "vans_era_59_red.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/vans_era_59_red.webp",
     price: "840.000",
     brand: "vans",
     color: "red",
@@ -426,7 +426,7 @@ export const productsList = [
   },
   {
     name: "adidas zx 5k boost",
-    img: "zx_5k_boost_green.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/zx_5k_boost_green.webp",
     price: "2.240.000",
     brand: "adidas",
     color: "green",
@@ -434,7 +434,7 @@ export const productsList = [
   },
   {
     name: "adidas lite racer adapt 4.0 shoes",
-    img: "h04296_sl_ecom.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/h04296_sl_ecom.webp",
     price: "1.200.000",
     brand: "adidas",
     color: "black",
@@ -442,7 +442,7 @@ export const productsList = [
   },
   {
     name: "adidas lite racer 3.0 shoes",
-    img: "gw7954_sl_ecom.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/gw7954_sl_ecom.webp",
     price: "750.000",
     brand: "adidas",
     color: "black",
@@ -450,7 +450,7 @@ export const productsList = [
   },
   {
     name: "adidas 4d fwd",
-    img: "gx2977_sl_ecom.jpg",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/gx2977_sl_ecom.jpg",
     price: "3.500.000",
     brand: "adidas",
     color: "black",
@@ -458,7 +458,7 @@ export const productsList = [
   },
   {
     name: "new balance 574 court",
-    img: "ct574brg_nb_02_i.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/ct574brg_nb_02_i.webp",
     price: "1.260.000",
     brand: "new_balance",
     color: "red",
@@ -466,7 +466,7 @@ export const productsList = [
   },
   {
     name: "new balance x aries fresh foam 1080v11",
-    img: "m1080z11_nb_02_i.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/m1080z11_nb_02_i.webp",
     price: "2.520.000",
     brand: "new_balance",
     color: "red",
@@ -474,7 +474,7 @@ export const productsList = [
   },
   {
     name: "new balance numeric jamie foy 306 lanceless",
-    img: "nm306lbw_nb_02_i.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/nm306lbw_nb_02_i.webp",
     price: "1.120.000",
     brand: "new_balance",
     color: "white",
@@ -482,7 +482,7 @@ export const productsList = [
   },
   {
     name: "vans rowan",
-    img: "vans_rowan_blue.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/vans_rowan_blue.webp",
     price: "980.000",
     brand: "vans",
     color: "blue",
@@ -490,7 +490,7 @@ export const productsList = [
   },
   {
     name: "vans sk8 hi",
-    img: "sk8_hi_green.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/sk8_hi_green.webp",
     price: "1.120.000",
     brand: "vans",
     color: "green",
@@ -498,7 +498,7 @@ export const productsList = [
   },
   {
     name: "converse chuck taylor all star washed canvas",
-    img: "A02584C_D_08X1.jpg",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/A02584C_D_08X1.jpg",
     price: "910.000",
     brand: "converse",
     color: "green",
@@ -506,7 +506,7 @@ export const productsList = [
   },
   {
     name: "converse chuck taylor all star patchwork",
-    img: "A02030C_A_08X1.jpg",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/A02030C_A_08X1.jpg",
     price: "910.000",
     brand: "converse",
     color: "green",
@@ -514,7 +514,7 @@ export const productsList = [
   },
   {
     name: "converse unt1tl3d translucent barcode",
-    img: "A02598C_A_08X1.jpg",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/A02598C_A_08X1.jpg",
     price: "1.050.000",
     brand: "converse",
     color: "white",
@@ -522,7 +522,7 @@ export const productsList = [
   },
   {
     name: "converse chuck taylor all star classic",
-    img: "M7650_A_08X1.jpg",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/M7650_A_08X1.jpg",
     price: "910.000",
     brand: "converse",
     color: "white",
@@ -530,7 +530,7 @@ export const productsList = [
   },
   {
     name: "adidas ultraboost 5.0 dna shoes",
-    img: "gx9332_sl_ecom.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/gx9332_sl_ecom.webp",
     price: "3.300.000",
     brand: "adidas",
     color: "black",
@@ -538,7 +538,7 @@ export const productsList = [
   },
   {
     name: "adidas nmd r1",
-    img: "nmd_r1_white.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/nmd_r1_white.webp",
     price: "2.100.000",
     brand: "adidas",
     color: "white",
@@ -546,7 +546,7 @@ export const productsList = [
   },
   {
     name: "adidas stan smith",
-    img: "stan_smith_white.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/stan_smith_white.webp",
     price: "1.300.000",
     brand: "adidas",
     color: "white",
@@ -554,7 +554,7 @@ export const productsList = [
   },
   {
     name: "adidas ultraboost 4.0 dna shoes",
-    img: "ultraboost_4.0_dna_white.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/ultraboost_4.0_dna_white.webp",
     price: "2.660.000",
     brand: "adidas",
     color: "white",
@@ -562,7 +562,7 @@ export const productsList = [
   },
   {
     name: "new balance fuelcell shift tr",
-    img: "mxshftlk_nb_02_i.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/mxshftlk_nb_02_i.webp",
     price: "1.400.000",
     brand: "new_balance",
     color: "black",
@@ -570,7 +570,7 @@ export const productsList = [
   },
   {
     name: "new balance numeric tiago lemos 1010",
-    img: "nm1010bb_nb_02_i.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/nm1010bb_nb_02_i.webp",
     price: "1.540.000",
     brand: "new_balance",
     color: "black",
@@ -578,7 +578,7 @@ export const productsList = [
   },
   {
     name: "new balance numeric 212 pro court",
-    img: "nm212bss_nb_02_i.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/nm212bss_nb_02_i.webp",
     price: "980.000",
     brand: "new_balance",
     color: "black",
@@ -586,7 +586,7 @@ export const productsList = [
   },
   {
     name: "new balance 210 pro court",
-    img: "ct210trb_nb_02_i.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/ct210trb_nb_02_i.webp",
     price: "910.000",
     brand: "new_balance",
     color: "black",
@@ -594,7 +594,7 @@ export const productsList = [
   },
   {
     name: "new balance numeric tiago lemos 1010",
-    img: "nm1010gm_nb_02_i.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/nm1010gm_nb_02_i.webp",
     price: "1.540.000",
     brand: "new_balance",
     color: "green",
@@ -602,7 +602,7 @@ export const productsList = [
   },
   {
     name: "reebok lavante trail 2",
-    img: "reebok_lavante_trail_2_green.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/reebok_lavante_trail_2_green.webp",
     price: "1.190.000",
     brand: "reebok",
     color: "green",
@@ -610,7 +610,7 @@ export const productsList = [
   },
   {
     name: "reebok looney tunes",
-    img: "rebook_looney_tunes.jpg",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/rebook_looney_tunes.jpg",
     price: "1.680.000",
     brand: "reebok",
     color: "red",
@@ -618,7 +618,7 @@ export const productsList = [
   },
   {
     name: "reebok zig kinetica ii",
-    img: "reebok_zig_kinetica_ii.jpg",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/reebok_zig_kinetica_ii.jpg",
     price: "2.380.000",
     brand: "reebok",
     color: "red",
@@ -626,7 +626,7 @@ export const productsList = [
   },
   {
     name: "vans old skool",
-    img: "vans_old_skool_red.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/vans_old_skool_red.webp",
     price: "910.000",
     brand: "vans",
     color: "red",
@@ -634,7 +634,7 @@ export const productsList = [
   },
   {
     name: "vans pride old skool",
-    img: "pride_old_skool_white.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/pride_old_skool_white.webp",
     price: "1.050.000",
     brand: "vans",
     color: "white",
@@ -642,7 +642,7 @@ export const productsList = [
   },
   {
     name: "new balance numeric jamie foy 306",
-    img: "nm306slc_nb_02_i.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/nm306slc_nb_02_i.webp",
     price: "1.260.000",
     brand: "new_balance",
     color: "blue",
@@ -650,7 +650,7 @@ export const productsList = [
   },
   {
     name: "new balance numeric jamie foy 306",
-    img: "nm306ugc_nb_02_i.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/nm306ugc_nb_02_i.webp",
     price: "1.260.000",
     brand: "new_balance",
     color: "black",
@@ -658,7 +658,7 @@ export const productsList = [
   },
   {
     name: "new balance numeric 288 sport",
-    img: "nm288sdb_nb_02_i.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/nm288sdb_nb_02_i.webp",
     price: "1.330.000",
     brand: "new_balance",
     color: "green",
@@ -666,7 +666,7 @@ export const productsList = [
   },
   {
     name: "new balance fuelcell 996v4",
-    img: "mch996l4_nb_02_i.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/mch996l4_nb_02_i.webp",
     price: "2.030.000",
     brand: "new_balance",
     color: "blue",
@@ -674,7 +674,7 @@ export const productsList = [
   },
   {
     name: "new balance numeric 288 sport",
-    img: "nm288sgh_nb_02_i.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/nm288sgh_nb_02_i.webp",
     price: "1.260.000",
     brand: "new_balance",
     color: "white",
@@ -682,7 +682,7 @@ export const productsList = [
   },
   {
     name: "reebok nano x2",
-    img: "reebok_nano_x2_black.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/reebok_nano_x2_black.webp",
     price: "1.890.000",
     brand: "reebok",
     color: "black",
@@ -690,7 +690,7 @@ export const productsList = [
   },
   {
     name: "reebok trail cruiser",
-    img: "reebok_trail_cruiser_black.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/reebok_trail_cruiser_black.webp",
     price: "1.260.000",
     brand: "reebok",
     color: "black",
@@ -698,7 +698,7 @@ export const productsList = [
   },
   {
     name: "reebok victory g",
-    img: "reebok_victory_g_blue.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/reebok_victory_g_blue.webp",
     price: "1.680.000",
     brand: "reebok",
     color: "blue",
@@ -706,7 +706,7 @@ export const productsList = [
   },
   {
     name: "reebok zig dynamica 2",
-    img: "reebok_zig_dynamica_2_blue.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/reebok_zig_dynamica_2_blue.webp",
     price: "1.120.000",
     brand: "reebok",
     color: "blue",
@@ -714,7 +714,7 @@ export const productsList = [
   },
   {
     name: "reebok answer iv",
-    img: "reebok_answer_iv_green.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/reebok_answer_iv_green.webp",
     price: "2.100.000",
     brand: "reebok",
     color: "green",
@@ -722,7 +722,7 @@ export const productsList = [
   },
   {
     name: "reebok tyrrell winston",
-    img: "tyrrell_winston.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/tyrrell_winston.webp",
     price: "2.240.000",
     brand: "reebok",
     color: "white",
@@ -730,7 +730,7 @@ export const productsList = [
   },
   {
     name: "reebok nano x2",
-    img: "reebok_nano_x2.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/reebok_nano_x2.webp",
     price: "1.890.000",
     brand: "reebok",
     color: "white",
@@ -738,7 +738,7 @@ export const productsList = [
   },
   {
     name: "vans colfax boot",
-    img: "vans_colfax_boot_black.jpg",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/vans_colfax_boot_black.jpg",
     price: "1.470.000",
     brand: "vans",
     color: "black",
@@ -746,7 +746,7 @@ export const productsList = [
   },
   {
     name: "vans skate authentic",
-    img: "skate_authentic.webp",
+    img: "https://res.cloudinary.com/ricky-assets/image/upload/shoeshop/skate_authentic.webp",
     price: "910.000",
     brand: "vans",
     color: "white",
